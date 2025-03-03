@@ -1,0 +1,16 @@
+.slider {
+    width: 20rem;
+    border: .2rem solid blue;
+
+    @media (min-width: 435px) {
+        width: 40rem;
+    }
+
+    @media (min-width: 768px) {
+        width: 60rem;
+    }
+
+    @media (min-width: 1024px) {
+        width: 100rem;
+    }
+}
