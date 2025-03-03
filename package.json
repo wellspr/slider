@@ -45,6 +45,7 @@
     "url": "https://github.com/wellspr/slider.git"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.30.0",
     "@wellspr/slider": "0.0.1"
   }
 }

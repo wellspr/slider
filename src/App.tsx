@@ -17,6 +17,7 @@ import reactjs from "./assets/logos/react.svg";
 import svelte from "./assets/logos/sveltetechnology-icon.svg";
 import vuejs from "./assets/logos/vue.svg";
 import vite from "./assets/logos/vitejsdev-icon.svg";
+import { IconBrandGithub, IconBrandNpm } from "@tabler/icons-react";
 
 type Logo = { id: number, image: string, alt: string }
 
@@ -57,7 +58,7 @@ function App() {
 	return (
 		<div className="app">
 			<div className="app__header">
-				Slider App
+				Slider Demo App
 			</div>
 
 			<div className="app__slider">
@@ -70,6 +71,19 @@ function App() {
 				/>
 			</div>
 
+			<footer className="footer">
+				<div className="footer__copy">
+					&copy; 2025 Slider - All rights reserved
+				</div>
+				<a className="footer__link" href="https://github.com/wellspr/slider">
+					View on Github
+					<IconBrandGithub />
+				</a>
+				<a className="footer__link" href="https://www.npmjs.com/package/@wellspr/slider">
+					View npm package
+					<IconBrandNpm />
+				</a>
+			</footer>
 		</div>
 
 	);
