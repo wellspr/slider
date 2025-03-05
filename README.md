@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# Slider
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Create sliders easy end fast. Currently available is an infinite slider component. You must pass an array of components that will slide through the slider pane. Each time one component goes out of the
 
-Currently, two official plugins are available:
+## install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  npm install @wellspr/slider
 
-## Expanding the ESLint configuration
+## Usage
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+You must provide an array containing the react components that are intended to enter the slide.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```javascript
+import { InfiniteSlider } from "@wellspr/slider";
+
+const App = () => {
+
+const arr = [ <ComponentA />, <ComponentB />, ..., <ComponentN /> ];
+
+return <InfiniteSlider
+   	arr={arr}
+	className="slider"
+	translationStep="20rem"
+	interval={3000}
+	transitionDelay={1000}
+   />
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+You can pass a classname to style the slider component. There is a required prop, *translationStep*, which tells slider by how much it will translate each time. Set this *translationStep* to equal to the *width* of each component. Also you can set *interval*, the interval between each iteration, and *transitionDelay*, the actual delay between each iteration.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* translationStep (string): The size of each individual translation of the slider;
+* interval (number): The interval between each subsequent translation (given in miliseconds);
+* transitionDelay (number): The transition delay imposed on the translation (given in miliseconds).
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Example
+
+[Demo app](https://slider-demo-app.vercel.app/)
