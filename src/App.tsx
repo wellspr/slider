@@ -1,8 +1,7 @@
 import "./app.scss";
 import "./slider.scss";
 
-//import { InfiniteSlider } from "../lib/InfiniteSlider";
-import { InfiniteSlider } from "@wellspr/slider";
+import { InfiniteSlider } from "../lib/InfiniteSlider";
 
 import angularjs from "./assets/logos/angular.svg";
 import django from "./assets/logos/djangoproject-icon.svg";
